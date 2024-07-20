@@ -62,7 +62,7 @@ html.Div(children=[
 # Lista despegable de NIVELES, segun nivel
 html.Div(
     children=[
-        html.Div(children='NIVEL', className='menu-title'),
+        html.Div(children='NIVELes', className='menu-title'),
         dcc.Dropdown(
             id='level', 
             options=[ 
