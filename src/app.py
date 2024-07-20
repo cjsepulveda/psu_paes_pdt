@@ -80,7 +80,7 @@ html.Div(
 # Lista depegable para Área (Plan Común, Carreras, Profundización HC)
 html.Div(
     children=[
-        html.Div(children='ÁREA', className='menu-title'),
+        html.Div(children='ÁREAS', className='menu-title'),
         dcc.Dropdown(
             id='area', 
             options=[ 
