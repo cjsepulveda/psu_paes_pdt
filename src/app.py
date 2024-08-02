@@ -63,26 +63,30 @@ def display_time_series(select_area):
     
     my_string = ", ".join(str(element) for element in select_area)
 
-    fig_test = px.line(df01, x='AÑO', y=select_area, color='AREA', markers=True,
+    fig_test = px.line(df01, x='AÑO', y=select_area, color='AREA',
                   title= f'RENDIMIENTO ESTUDIANTES en {my_string}',
-                  width=1000, height=380,
+                  width=1000, height=475,
                   labels={'value':'','variable':'PRUEBA','AÑO':'Año'},
                   color_discrete_map={'HC':'blue','TP-COM':'green','TP-IND':'orange'},
                   template="simple_white",
+                  
                   )
     
+    fig_test.update_traces(
+        mode="markers+lines", hovertemplate=None, line=dict( width=1.5))
+    
     fig_test.update_yaxes(tickfont_weight='bold',title_font_weight='bold',tickfont_size=15)
-    fig_test.update_xaxes(tickfont_weight='bold',title_font_weight='bold')
+    fig_test.update_xaxes(tickfont_weight='bold',title_font_weight='bold',tickfont_size=15)
 
     fig_test.update_layout(
-                         hoverlabel_font_color='white',
-                         hoverlabel_font_family='Consolas',
-                         uniformtext_minsize=5,
-                         uniformtext_mode='show',
+                         
+                         hoverlabel_font=dict(family='Consolas', weight='bold', size=15),
                          title_font_weight='bold',
                          font_family='Consolas',
                          title_font_size=20,
-                         title_x=0.5
+                         title_x=0.5,
+                         hovermode="x",
+                                                 
                          )
 
 
